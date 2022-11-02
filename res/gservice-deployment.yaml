@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gservice-example
+  namespace: privileges
+  labels:
+    app: gservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gservice
+  template:
+    metadata:
+      labels:
+        app: gservice
+    spec:
+      containers:
+      - name: gservice-image
+        image: gservice-image:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
