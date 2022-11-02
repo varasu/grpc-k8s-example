@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "github.com/varasu/grpc-k8s-example/gservice/api_v1";
+
+package api.v1;
+
+service GService {
+	rpc ListPods(ListPodsRequest) returns (Pods) {}
+}
+
+message Pod {
+	string name = 1;
+}
+
+message Pods {
+	repeated Pod pods = 1;
+}
+
+
+message ListPodsRequest {
+	string namespace = 1; 
+}
