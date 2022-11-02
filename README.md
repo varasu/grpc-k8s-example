@@ -76,5 +76,25 @@ gclient pods
 gclient pods -n kube-system
 ```
 
+## Usage
+```
+Execute commands to gservice grpc server.
+
+Usage:
+  gclient [command]
+
+Available Commands:
+  completion  Generate the autocompletion script for the specified shell
+  help        Help about any command
+  pods        Fetch pods names from the gservice server.
+
+Flags:
+  -h, --help         help for gclient
+  -t, --toggle       Help message for toggle
+      --url string   gservice url (default "localhost:8080")
+
+Use "gclient [command] --help" for more information about a command.
+```
+
 ## Testing
 E2E testing with `grpcurl` and `bash` on running instance.
